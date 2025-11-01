@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RicRackRoguelike"
-run/main_scene="uid://by6stc2nep3ud"
+run/main_scene="uid://b147c24ik0i73"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/mode=2
 
 [global_group]
 

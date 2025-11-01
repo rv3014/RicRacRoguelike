@@ -3,10 +3,12 @@
 enum Team {PLAYER, ENEMY}
 enum Type {MELEE, RANGED}
 
-var name : String
+
 var x : int
 var y: int
 var position: Vector2 = Vector2(x, y)
+
+var name : String
 var team : Team
 var types : Array[Type]
 
@@ -63,6 +65,7 @@ func isPlayer(otherCard: Card):
 	
 func isEnemy(otherCard: Card):
 	return otherCard.team == Team.ENEMY
+	
 
 func ability(boardState):
 	#input = array of cards in board
