@@ -1,5 +1,4 @@
-class_name Tile
-extends Sprite2D
+extends Node
 
 
 # Called when the node enters the scene tree for the first time.
