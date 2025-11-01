@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://cnox550sc2b48"]
+[gd_scene load_steps=4 format=3 uid="uid://cnox550sc2b48"]
 
+[ext_resource type="PackedScene" uid="uid://8h2jjmiua2mo" path="res://scenes/board_tile.tscn" id="1_bw3vb"]
 [ext_resource type="Script" uid="uid://c7bwj1x10l617" path="res://scripts/board.gd" id="1_tx6nw"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4mug4"]
@@ -7,6 +8,7 @@ size = Vector2(180, 180)
 
 [node name="Board" type="Node2D"]
 script = ExtResource("1_tx6nw")
+tileScene = ExtResource("1_bw3vb")
 
 [node name="Board-Sprite" type="Sprite2D" parent="."]
 position = Vector2(-7.1054274e-15, -7.1054274e-15)
