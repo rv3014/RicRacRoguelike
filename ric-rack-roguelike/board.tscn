@@ -1,17 +1,11 @@
-[gd_scene format=3 uid="uid://cnox550sc2b48"]
+[gd_scene load_steps=2 format=3 uid="uid://cnox550sc2b48"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4mug4"]
+size = Vector2(180, 180)
 
 [node name="Board" type="Node2D"]
 
-[node name="GridContainer" type="GridContainer" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -90.0
-offset_top = -90.0
-offset_right = 90.0
-offset_bottom = 90.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 3
+[node name="Board-Sprite" type="Sprite2D" parent="."]
+position = Vector2(-1.1920929e-07, -1.1920929e-07)
+scale = Vector2(3.5, 3.5)
+texture = SubResource("PlaceholderTexture2D_4mug4")
