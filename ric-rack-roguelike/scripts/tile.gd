@@ -17,7 +17,8 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if(event is InputEventMouseButton):
 		if event.pressed:
 			mark_tile()
-			_on_tile_clicked.emit(index)
+			#_on_tile_clicked.emit(index)
+			_on_tile_clicked.emit(coords)
 
 func mark_tile():
 	tile_sprite.texture = X_texture
