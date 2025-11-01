@@ -13,3 +13,6 @@ shape = SubResource("RectangleShape2D_wissu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_wissu")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

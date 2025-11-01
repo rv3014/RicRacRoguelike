@@ -13,9 +13,9 @@ func create_board():
 		for x in range(board_size):
 			var tile = tileScene.instantiate()
 			board.add_child(tile)
-			tile.position = Vector2((x- 1)* tile_size, (y-1)      *tile_size)
-			tile.index = y*board_size+x
-			#tile.tile_clicked.connect(_on_tile_clicked)
+			tile.position = Vector2((x- 1)* tile_size, (y-1)*tile_size)
+			tile.index = (y*board_size)+x+1
+			tile.connect("_on_tile_clicked", print_index)
 
 func center_board():
 	var viewport_size = get_viewport_rect().size
@@ -23,3 +23,7 @@ func center_board():
 	var board_pxl_size = Vector2(board_size, board_size)
 	
 	board.position = viewport_size/2 - board_pxl_size/2
+
+func print_index(index):
+	print(index)
+	
