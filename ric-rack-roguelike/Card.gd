@@ -1,9 +1,7 @@
-class_name Card
+@abstract class_name Card
 
 enum Team {PLAYER, ENEMY}
 enum Type {MELEE, RANGED}
-
-var boardsize
 
 var name : String
 var x : int
@@ -26,11 +24,14 @@ func isOrthogonal(otherCard: Card):
 	return false
 	
 func isAdjacent(otherCard: Card):
+	if (x == otherPosition.x  and (y == otherPosition.y + 1 or y == otherPosition.y - 1)) :
+		return true
+	if (y == otherPosition.y  and (x == otherPosition.x + 1 or x == otherPosition.x - 1)):
+		return true
 	return false
-	
 	
 func isInCorner(otherCard: Card):
-	return false
+	return otherCard.x != 1 and otherCard.y != 1
 	
 func isInWinLine(otherCard: Card, isWin: bool):
 	return false
@@ -39,10 +40,10 @@ func isInMiddle(otherCard: Card):
 	return otherCard.position == Vector2(1, 1)
 	
 func isInColumn(otherCard: Card, col: int):
-	return false
+	return otherCard.x == col
 	
 func isInRow(otherCard: Card, row: int):
-	return false
+	return otherCard.y == row
 	
 func isRanged(otherCard: Card):
 	for type in otherCard.types:
@@ -61,10 +62,6 @@ func isPlayer(otherCard: Card):
 	
 func isEnemy(otherCard: Card):
 	return otherCard.team == Team.ENEMY
-	
-
-	
-	
 
 func ability(boardState):
 	#input = array of cards in board
