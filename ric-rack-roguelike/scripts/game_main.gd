@@ -36,6 +36,8 @@ const win_cons = [
 	[0, 1, 0],
 	[0, 0, 1]]
 	]
+
 func check_win(player, boardState):
+	var temp_boardState
 	
 	return
