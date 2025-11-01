@@ -1,2 +1,3 @@
-class_name Tile
-extends Node2D
+extends Area2D
+
+var index:int = -1
