@@ -14,6 +14,7 @@ func create_board():
 			var tile = tileScene.instantiate()
 			board.add_child(tile)
 			tile.position = Vector2((x- 1)* tile_size, (y-1)*tile_size)
+			tile.coords = Vector2(x, y)
 			tile.index = (y*board_size)+x+1
 			tile.connect("_on_tile_clicked", print_index)
 
