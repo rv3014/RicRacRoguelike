@@ -2,7 +2,8 @@ extends Area2D
 
 @onready var tile_sprite: Sprite2D = $Sprite2D
 @onready var tile:= $"."
-var index:int = 0
+var index:int = -1
+var coords:Vector2 = Vector2(-1,-1)
 signal _on_tile_clicked
 
 #preloading
