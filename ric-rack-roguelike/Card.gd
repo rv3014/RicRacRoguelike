@@ -24,6 +24,7 @@ func isOrthogonal(otherCard: Card):
 	return false
 	
 func isAdjacent(otherCard: Card):
+	var otherPosition: Vector2 = otherCard.position
 	if (x == otherPosition.x  and (y == otherPosition.y + 1 or y == otherPosition.y - 1)) :
 		return true
 	if (y == otherPosition.y  and (x == otherPosition.x + 1 or x == otherPosition.x - 1)):
