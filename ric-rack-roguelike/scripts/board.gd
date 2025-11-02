@@ -8,7 +8,7 @@ func _ready():
 	center_board()
 	
 func create_board():
-	var tile_size = 60
+	var tile_size = 64 * 5 / 3
 	for y in range(board_size):
 		for x in range(board_size):
 			var tile = tileScene.instantiate()
