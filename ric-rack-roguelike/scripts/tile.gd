@@ -29,6 +29,7 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 func mark_tile():
 	var newTexture = ImageTexture.create_from_image(Image.load_from_file(iconPath + cardName + ".svg"))
 	tile_sprite.texture = newTexture
+	tile_sprite.scale = Vector2(.15, .15)
 func robo_tile():
 	tile_sprite.texture = O_texture
 	_robot_move.emit()
