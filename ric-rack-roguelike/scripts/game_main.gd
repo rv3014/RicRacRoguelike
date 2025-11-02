@@ -26,6 +26,9 @@ func exit_shop():
 func _ready():
 	board.connect("moveMade", check_win)
 	hand.connect("selectedCard", selectCard)
+	
+func _process(delta: float):
+	$Label.text = "Points: " + str(points) + '/' + str(point_goal)
 
 func selectCard(card):
 	currentCard = card
@@ -65,6 +68,8 @@ func check_win(boardState):
 		print("Tie")
 		gameWon = true
 		board.gameResult = true
+		compute_instructions(abilities(boardState))
+		print(points)
 		return gameWon
 		
 func abilities(boardState): #Boardstate is a list of 9 Cards in the order of index
