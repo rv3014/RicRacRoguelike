@@ -1,4 +1,4 @@
-@abstract class_name Card
+class_name Card
 
 enum Team {PLAYER, ENEMY}
 enum Type {MELEE, RANGED}
