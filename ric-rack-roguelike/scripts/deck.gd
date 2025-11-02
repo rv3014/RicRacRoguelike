@@ -10,3 +10,10 @@ func randomCard():
 	var card = cards.pop_at(i)
 	used.append(card)
 	return card
+
+func appendToDeck(card : Card):
+	cards.append(card)
+
+func resetDeck():
+	cards.append_array(used)
+	used = []

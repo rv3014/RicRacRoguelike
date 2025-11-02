@@ -5,6 +5,22 @@ extends Node
 var gameWon: bool = false
 var totalMoves: int = 0
 
+var currentCard : Card
+
+var points : int = 0
+var point_goal : int = 10
+
+func pointQuota():
+	if points >= point_goal:
+		point_goal *= 1.8
+		show_shop()
+
+func show_shop():
+	get_tree().change_scene_to_file("shop_scene")
+
+func exit_shop():
+	get_tree().change_scene_to_file("res://scenes/game_main.tscn")
+
 func _ready():
 	board.connect("moveMade", check_win)
 	
