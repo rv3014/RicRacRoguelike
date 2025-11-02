@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8ont0fm6c4ov"
-path="res://.godot/imported/thrown-daggers.svg-f155a8854caee63a7a278163641239ca.ctex"
+uid="uid://d1hdj5jt0nwus"
+path="res://.godot/imported/Stick.svg-d846f873fa037f32993aa6131ef5a59c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/thrown-daggers.svg"
-dest_files=["res://.godot/imported/thrown-daggers.svg-f155a8854caee63a7a278163641239ca.ctex"]
+source_file="res://assets/icons/Stick.svg"
+dest_files=["res://.godot/imported/Stick.svg-d846f873fa037f32993aa6131ef5a59c.ctex"]
 
 [params]
 

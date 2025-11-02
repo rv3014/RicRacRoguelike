@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ca15l6amc7qiv"
-path="res://.godot/imported/ballista.svg-59ba848a82d7316a6853cb0d22a34d80.ctex"
+path="res://.godot/imported/Ballista.svg-15c9d75381825620a50a1bf39e7288a4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/ballista.svg"
-dest_files=["res://.godot/imported/ballista.svg-59ba848a82d7316a6853cb0d22a34d80.ctex"]
+source_file="res://assets/icons/Ballista.svg"
+dest_files=["res://.godot/imported/Ballista.svg-15c9d75381825620a50a1bf39e7288a4.ctex"]
 
 [params]
 

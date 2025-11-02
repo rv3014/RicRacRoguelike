@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b4tvra24rbw0q"
-path="res://.godot/imported/sling.svg-f23abdf8e8ca5886b7bfb8185ef182cd.ctex"
+path="res://.godot/imported/Sling.svg-9384465232faab2b4b02eb751cf5d438.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/sling.svg"
-dest_files=["res://.godot/imported/sling.svg-f23abdf8e8ca5886b7bfb8185ef182cd.ctex"]
+source_file="res://assets/icons/Sling.svg"
+dest_files=["res://.godot/imported/Sling.svg-9384465232faab2b4b02eb751cf5d438.ctex"]
 
 [params]
 

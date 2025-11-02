@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kodyfa5km4ax"
-path="res://.godot/imported/archery-target.svg-9fcfea2639ff096822d33f48865eb2da.ctex"
+uid="uid://dnygs7752a4ex"
+path="res://.godot/imported/Flower.svg-22561384489c804ae79c92f125c8677d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/archery-target.svg"
-dest_files=["res://.godot/imported/archery-target.svg-9fcfea2639ff096822d33f48865eb2da.ctex"]
+source_file="res://assets/icons/Flower.svg"
+dest_files=["res://.godot/imported/Flower.svg-22561384489c804ae79c92f125c8677d.ctex"]
 
 [params]
 

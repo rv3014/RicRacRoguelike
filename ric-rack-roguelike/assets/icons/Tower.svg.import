@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4ymiexqqorfd"
-path="res://.godot/imported/spear-hook.svg-1299280697e10696bc0659b3a5eb0f87.ctex"
+uid="uid://ojf7tj8q7o1u"
+path="res://.godot/imported/Tower.svg-379c2f3e23060eff0a5d294f374f3a33.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/spear-hook.svg"
-dest_files=["res://.godot/imported/spear-hook.svg-1299280697e10696bc0659b3a5eb0f87.ctex"]
+source_file="res://assets/icons/Tower.svg"
+dest_files=["res://.godot/imported/Tower.svg-379c2f3e23060eff0a5d294f374f3a33.ctex"]
 
 [params]
 

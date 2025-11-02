@@ -9,5 +9,6 @@ size = Vector2(300, 60)
 script = ExtResource("1_eyfoh")
 
 [node name="Hand-Sprite" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(-7.1054274e-15, -7.1054274e-15)
 texture = SubResource("PlaceholderTexture2D_4mug4")

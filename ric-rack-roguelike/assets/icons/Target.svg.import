@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1hdj5jt0nwus"
-path="res://.godot/imported/wood-stick.svg-0c1d1d394a7b3d0f07ecc0872099fe44.ctex"
+uid="uid://kodyfa5km4ax"
+path="res://.godot/imported/Target.svg-b1a1f1f73e21c90ab404f01e47ca11f2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/wood-stick.svg"
-dest_files=["res://.godot/imported/wood-stick.svg-0c1d1d394a7b3d0f07ecc0872099fe44.ctex"]
+source_file="res://assets/icons/Target.svg"
+dest_files=["res://.godot/imported/Target.svg-b1a1f1f73e21c90ab404f01e47ca11f2.ctex"]
 
 [params]
 

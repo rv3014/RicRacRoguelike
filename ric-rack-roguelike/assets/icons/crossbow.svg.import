@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://oa48u81hyhhh"
-path="res://.godot/imported/crossbow.svg-ef1946458efbb25942f297f32b660ddb.ctex"
+path="res://.godot/imported/Crossbow.svg-dae45b8311dd98cee87d6fd0d83a2c30.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/crossbow.svg"
-dest_files=["res://.godot/imported/crossbow.svg-ef1946458efbb25942f297f32b660ddb.ctex"]
+source_file="res://assets/icons/Crossbow.svg"
+dest_files=["res://.godot/imported/Crossbow.svg-dae45b8311dd98cee87d6fd0d83a2c30.ctex"]
 
 [params]
 
