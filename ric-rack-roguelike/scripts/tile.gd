@@ -4,7 +4,7 @@ extends Area2D
 @onready var tile:= $"."
 var index:int = -1
 var coords:Vector2 = Vector2(-1,-1)
-var lockTiles:bool = true
+var lockTiles:bool = false
 var cardName: String= ""
 
 signal _on_tile_clicked
@@ -21,9 +21,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 	if(event is InputEventMouseButton):
 		if event.pressed and !lockTiles:
 			_on_tile_clicked.emit(coords)
-			if(cardName!="" and !lockTiles):
-				mark_tile()
-				lockTiles = true
 		
 
 func mark_tile():
@@ -31,7 +28,9 @@ func mark_tile():
 	var newTexture = ImageTexture.create_from_image(Image.load_from_file(iconPath + cardName + ".svg"))
 	tile_sprite.texture = newTexture
 	tile_sprite.scale = Vector2(.15, .15)
+	lockTiles = true
 func robo_tile():
 	tile_sprite.texture = O_texture
 	tile_sprite.scale = Vector2(.3, .3)
+	lockTiles = true
 	_robot_move.emit()
