@@ -8,6 +8,7 @@ func _init(team):
 	cost = 4
 
 func ability(boardState: Array[Card]):
+	return
 	var output = []
 	output.resize(len(boardState))
 	output.fill([])

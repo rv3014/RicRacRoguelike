@@ -2,9 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://8h2jjmiua2mo" path="res://scenes/board_tile.tscn" id="1_bw3vb"]
 [ext_resource type="Script" uid="uid://c7bwj1x10l617" path="res://scripts/board.gd" id="1_tx6nw"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4mug4"]
-size = Vector2(180, 180)
+[ext_resource type="Texture2D" uid="uid://jmeyjrraljjg" path="res://assets/The Grid-Recovered.png" id="3_nglv8"]
 
 [node name="Board" type="Node2D"]
 script = ExtResource("1_tx6nw")
@@ -12,4 +10,5 @@ tileScene = ExtResource("1_bw3vb")
 
 [node name="Board-Sprite" type="Sprite2D" parent="."]
 position = Vector2(-7.1054274e-15, -7.1054274e-15)
-texture = SubResource("PlaceholderTexture2D_4mug4")
+scale = Vector2(5, 5)
+texture = ExtResource("3_nglv8")

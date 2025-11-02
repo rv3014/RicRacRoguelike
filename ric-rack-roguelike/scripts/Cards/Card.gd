@@ -13,6 +13,7 @@ var team : Team
 var types : Array[Type]
 var points: int
 var cost: int
+var cardIndex: int
 
 #func isValid(postion: Vector2):
 	#return (0 <= position.x and position.x <= 2) and (0 <= position.y and position.y <= 2)
@@ -75,6 +76,9 @@ func isMe(otherCard: Card):
 	return otherCard.position == position
 
 func ability(boardState):
+	#input = array of cards in board
+	#output = array of arrays of tuples(AMOUNT, OPERATION)
+	return
 	var output = []
 	output.resize(len(boardState))
 	output.fill([])

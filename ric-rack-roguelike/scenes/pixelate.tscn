@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnk1onibq4fxq"]
+
+[ext_resource type="Shader" uid="uid://dv50udt2xk7yh" path="res://shaders/pixelate.gdshader" id="1_0bbmh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0qv1y"]
+shader = ExtResource("1_0bbmh")
+shader_parameter/pixelation = 0.010000000475
+shader_parameter/opacity = 1.0
+
+[node name="Pixelate" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_0qv1y")
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 720.0
