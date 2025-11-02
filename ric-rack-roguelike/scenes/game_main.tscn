@@ -7,3 +7,4 @@
 script = ExtResource("1_tjvxm")
 
 [node name="Board" parent="." instance=ExtResource("2_hx1lv")]
+gameManager = null

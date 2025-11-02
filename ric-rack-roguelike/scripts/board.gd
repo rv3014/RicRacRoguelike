@@ -1,11 +1,13 @@
 extends Node2D
 
+
 @export var tileScene: PackedScene
-@export var cardScene: PackedScene
 @export var board_size:int = 3
 @onready var board:= $"."
 var boardState:= []
 var tileList:= []
+var gameResult: bool = false
+var totalMoves: int = 0
 signal moveMade
 func _ready():
 	create_board()
@@ -26,6 +28,8 @@ func create_board():
 			tileList.append(tile)
 			#tile.connect("_on_tile_clicked", print_index)
 			tile.connect("_on_tile_clicked", updateBoardState)
+			tile.disconnect("_on_tile_clicked", updateBoardState)
+			
 
 
 func center_board():
@@ -36,13 +40,24 @@ func center_board():
 	board.position = viewport_size/2 - board_pxl_size/2
 
 func updateBoardState(coordinates: Vector2):
-	boardState[coordinates.x][coordinates.y] = 1
-	moveMade.emit(boardState)
-	robotMove()
+	if(totalMoves<10):
+		totalMoves+=1
+	else:
+		gameResult = true
+
+	if(!gameResult):
+		boardState[coordinates.x][coordinates.y] = 1
+		moveMade.emit(boardState)
+		robotMove()
 
 func robotMove():
 	var hasNotMoved = true
-	while(hasNotMoved):
+	if(totalMoves<9):
+		totalMoves+=1
+	else:
+		gameResult = true
+	
+	while(hasNotMoved and !gameResult):
 		var x_coord = randi_range(0, 2)
 		var y_coord = randi_range(0, 2)
 		if(boardState[x_coord][y_coord] == 0):
@@ -51,6 +66,9 @@ func robotMove():
 			tileList[y_coord*board_size+x_coord].robo_tile()
 			moveMade.emit(boardState)
 
+
+func result_handler():
+	gameResult = true
 
 
 func print_index(index):
