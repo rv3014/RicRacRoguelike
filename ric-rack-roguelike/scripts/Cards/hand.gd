@@ -7,16 +7,21 @@ extends Node2D
 @export var CARD_WIDTH:int = 60
 @export var CARD_HEIGHT:int = 60
 var collection : Array[Card] = []
+var displayed_hand:= []
 const cardScene = preload("res://scenes/card.tscn")
 const shaderScene = preload("res://scenes/pixelate.tscn")
 const scriptPath = "res://scripts/Cards/"
 const iconPath = "res://assets/icons/"
 @onready var hand:= $"."
+
+signal selectedCard
+
 func _ready():
 	var deck: Deck = init_Deck()
 	create_hand(deck)
 	center_hand()
 	display_hand()
+	create_selectors()
 	
 	#print(len(collection))
 	#for i in collection:
@@ -46,12 +51,23 @@ func display_hand():
 		var tempStore = cardScene.instantiate()
 		tempStore.set_script(scriptPath + collection[i].name +".gd")
 		tempStore.position += Vector2((i - 2) * 100 * 1.778 - 93, 1)
+		#tempStore.cardIndex = i
 		var iconSprite = Sprite2D.new()
 		iconSprite.texture = ImageTexture.create_from_image(Image.load_from_file(iconPath + collection[i].name + ".svg"))
 		iconSprite.scale = iconSprite.scale/16
 		iconSprite.position += Vector2(20, -65)
 		tempStore.add_child(iconSprite)
 		hand.add_child(tempStore)
+		displayed_hand.append(tempStore)
+	return
+
+func create_selectors():
+	for i in range(hand_size):
+		var card = displayed_hand[i]
+		var selector = Button.new()
+		selector.size = (Vector2(50,50))
+		card.add_child(selector)
+		selector.pressed.connect(Callable(self, "select").bind(collection[i]))
 	return
 
 func center_hand():
@@ -61,6 +77,10 @@ func center_hand():
 	
 	hand.position.x = (viewport_size/2).x - (board_pxl_size/2).x
 	hand.position.y += (4*viewport_size/5).y - (board_pxl_size/2).y
+
+func select(card):
+	print("got me!")
+	selectedCard.emit(card)
 
 func print_index(index):
 	print(index)

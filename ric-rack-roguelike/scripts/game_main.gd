@@ -1,7 +1,7 @@
 extends Node
 
 @onready var board:= $Board
-
+@onready var hand:= $Hand
 var gameWon: bool = false
 var totalMoves: int = 0
 
@@ -23,10 +23,18 @@ func exit_shop():
 
 func _ready():
 	board.connect("moveMade", check_win)
-	
+	hand.connect("selectedCard", selectCard)
+
+func selectCard(card):
+	currentCard = card
+	board.cardSelected = currentCard
+	print(currentCard.name)
+
 func check_win(boardState):
 	totalMoves+=1
 	print(totalMoves)
+	print(currentCard.name)
+
 	if(totalMoves < 10):
 		var row_sum
 		var col_sum
