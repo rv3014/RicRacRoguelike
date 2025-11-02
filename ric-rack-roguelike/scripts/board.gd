@@ -8,7 +8,6 @@ const cardScene = preload("res://scenes/card.tscn")
 
 var boardState:= []
 
-
 var cardState:= []
 var tileList:= []
 var gameResult: bool = false
@@ -55,6 +54,7 @@ func updateBoardState(coordinates: Vector2):
 	if(cardSelected  != null):
 		for tile in tileList:
 			tile.lockTiles = false
+			tile.cardName = cardSelected.name
 	if(!gameResult and cardSelected != null):
 		if(boardState[coordinates.x][coordinates.y] == 0):
 			boardState[coordinates.x][coordinates.y] = 1
