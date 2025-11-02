@@ -64,3 +64,41 @@ func check_win(boardState):
 		gameWon = true
 		board.gameResult = true
 		return gameWon
+		
+func abilities(boardState): #Boardstate is a list of 9 Cards in the order of index
+	var instructions = []
+	instructions.resize(len(boardState))
+	instructions.fill([])
+	for card in boardState:
+		var output = card.ability(boardState)
+		if card.getTeam() == Card.Team.PLAYER:
+			for i in range(len(instructions)):
+				instructions[i].append_array(output[i])
+		elif card.getTeam() == Card.Team.ENEMY:
+			for i in range(len(instructions)):
+				for j in output[i]:
+					if output[i][j][0] == Card.Modifier.ADD:
+						output[i][j][1] *= -1
+					if output[i][j][0] == Card.Modifier.MULT:
+						output[i][j][1] = 1 / output[i][j][1]
+				instructions[i].append_array(output[i])
+
+	return instructions
+
+			
+			
+		
+func compute_instructions(instructions):
+	var cps : Array[int] = []
+	var sum : int = 0
+	for card in instructions:
+		var cp = card.points
+		for instruction in card:
+			if instruction[0] == Card.Modifier.ADD:
+				cp += instruction[1]
+			elif instruction[0] == Card.Modifier.MULT:
+				cp *= instruction[1]
+		cps.append(floor(cp))
+	for pt in cps:
+		sum += pt
+	return sum
