@@ -47,7 +47,6 @@ func center_board():
 	board.position.y += (4*viewport_size/10).y - (board_pxl_size/2).y
 
 func updateBoardState(coordinates: Vector2):
-
 	if(totalMoves<10 and cardSelected != null):
 		totalMoves+=1
 		print("moved")
@@ -56,7 +55,7 @@ func updateBoardState(coordinates: Vector2):
 	if(cardSelected  != null):
 		for tile in tileList:
 			tile.lockTiles = false
-	if(!gameResult and cardSelected  != null):
+	if(!gameResult and cardSelected != null):
 		if(boardState[coordinates.x][coordinates.y] == 0):
 			boardState[coordinates.x][coordinates.y] = 1
 			moveMade.emit(boardState)

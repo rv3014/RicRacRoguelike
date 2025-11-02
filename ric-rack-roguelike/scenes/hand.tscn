@@ -6,7 +6,7 @@
 [node name="Hand" type="Node2D"]
 script = ExtResource("1_eyfoh")
 
-[node name="Hand-Sprite" type="Sprite2D" parent="."]
+[node name="Hand-Sprite" type="Sprite2D" parent="." groups=["UI"]]
 position = Vector2(-7.1054274e-15, -7.1054274e-15)
 scale = Vector2(3, 3)
 texture = ExtResource("2_cmdsa")

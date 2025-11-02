@@ -10,6 +10,8 @@ var currentCard : Card
 var points : int = 0
 var point_goal : int = 10
 
+signal tileSelected
+
 func pointQuota():
 	if points >= point_goal:
 		point_goal *= 1.8
@@ -31,9 +33,10 @@ func selectCard(card):
 	print(currentCard.name)
 
 func check_win(boardState):
+	
 	totalMoves+=1
-	print(totalMoves)
-	print(currentCard.name)
+	if(totalMoves % 2 == 1):
+		tileSelected.emit(currentCard)
 
 	if(totalMoves < 10):
 		var row_sum
