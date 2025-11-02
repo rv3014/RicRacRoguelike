@@ -6,3 +6,4 @@ func _init(team):
 	types = [Type.RANGED]
 	points = 1
 	cost = 1
+	desc = "Do Nothing"
