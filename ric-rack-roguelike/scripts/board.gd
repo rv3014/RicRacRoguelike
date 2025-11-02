@@ -28,8 +28,7 @@ func create_board():
 			tileList.append(tile)
 			#tile.connect("_on_tile_clicked", print_index)
 			tile.connect("_on_tile_clicked", updateBoardState)
-			tile.disconnect("_on_tile_clicked", updateBoardState)
-			
+
 
 
 func center_board():
@@ -46,9 +45,14 @@ func updateBoardState(coordinates: Vector2):
 		gameResult = true
 
 	if(!gameResult):
-		boardState[coordinates.x][coordinates.y] = 1
-		moveMade.emit(boardState)
-		robotMove()
+		if(boardState[coordinates.x][coordinates.y] == 0):
+			boardState[coordinates.x][coordinates.y] = 1
+			moveMade.emit(boardState)
+			robotMove()
+		
+	else:
+		for tile in tileList:
+			tile.lockTiles = true
 
 func robotMove():
 	var hasNotMoved = true
@@ -64,7 +68,11 @@ func robotMove():
 			hasNotMoved = false
 			boardState[x_coord][y_coord] = -1
 			tileList[y_coord*board_size+x_coord].robo_tile()
+			tileList[y_coord*board_size+x_coord].lockTiles = true
 			moveMade.emit(boardState)
+	if(gameResult):
+		for tile in tileList:
+			tile.lockTiles = true
 
 
 func result_handler():
