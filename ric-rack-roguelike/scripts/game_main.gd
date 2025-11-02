@@ -36,7 +36,9 @@ func check_win(boardState):
 	
 	totalMoves+=1
 	if(totalMoves % 2 == 1):
+		print("emit card")
 		tileSelected.emit(currentCard)
+		currentCard = null
 
 	if(totalMoves < 10):
 		var row_sum

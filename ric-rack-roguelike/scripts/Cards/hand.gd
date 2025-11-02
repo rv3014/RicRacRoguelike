@@ -62,11 +62,12 @@ func display_hand():
 		displayed_hand.append(tempStore)
 	return
 
-func played_card(card):
+func played_card(card: Card):
 	var index = -1
 	for i in range(displayed_hand.size()):
 		if collection[i] == card:
 			index = i
+			print(card.name)
 			break
 	if index == -1:
 		print("Card not found in hand")
