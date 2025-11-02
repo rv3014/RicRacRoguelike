@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ojf7tj8q7o1u"
-path="res://.godot/imported/siege-tower.svg-e8af4da9487593e930b1ecb23a9205e1.ctex"
+uid="uid://7hooiui86a66"
+path="res://.godot/imported/Longbow.svg-b884e1c9834920701760a1c4d060ce21.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/siege-tower.svg"
-dest_files=["res://.godot/imported/siege-tower.svg-e8af4da9487593e930b1ecb23a9205e1.ctex"]
+source_file="res://assets/icons/Longbow.svg"
+dest_files=["res://.godot/imported/Longbow.svg-b884e1c9834920701760a1c4d060ce21.ctex"]
 
 [params]
 

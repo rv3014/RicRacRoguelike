@@ -10,4 +10,5 @@
 shape = SubResource("RectangleShape2D_6u4wf")
 
 [node name="CardSprite" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_d81rb")

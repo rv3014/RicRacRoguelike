@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://7hooiui86a66"
-path="res://.godot/imported/long-bow.svg-26482e3d4b94855a196cce0997ff8ad8.ctex"
+uid="uid://c4ymiexqqorfd"
+path="res://.godot/imported/Spear.svg-fdb820bd3936409743353e6ab2d2be4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/long-bow.svg"
-dest_files=["res://.godot/imported/long-bow.svg-26482e3d4b94855a196cce0997ff8ad8.ctex"]
+source_file="res://assets/icons/Spear.svg"
+dest_files=["res://.godot/imported/Spear.svg-fdb820bd3936409743353e6ab2d2be4f.ctex"]
 
 [params]
 

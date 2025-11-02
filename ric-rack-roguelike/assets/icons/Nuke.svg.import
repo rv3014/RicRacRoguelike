@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dnygs7752a4ex"
-path="res://.godot/imported/flax.svg-5c0afb22e167ec8b013d77283fe0243a.ctex"
+uid="uid://bl5q8t3lqlowm"
+path="res://.godot/imported/Nuke.svg-1717b362bf752a79a61daa2716c09b1c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/icons/flax.svg"
-dest_files=["res://.godot/imported/flax.svg-5c0afb22e167ec8b013d77283fe0243a.ctex"]
+source_file="res://assets/icons/Nuke.svg"
+dest_files=["res://.godot/imported/Nuke.svg-1717b362bf752a79a61daa2716c09b1c.ctex"]
 
 [params]
 
