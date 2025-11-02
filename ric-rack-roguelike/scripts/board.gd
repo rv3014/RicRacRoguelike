@@ -63,6 +63,7 @@ func updateBoardState(coordinates: Vector2):
 	else:
 		for tile in tileList:
 			tile.lockTiles = true
+	cardSelected = null
 
 func robotMove():
 	var hasNotMoved = true
