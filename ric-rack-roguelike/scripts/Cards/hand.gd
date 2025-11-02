@@ -94,6 +94,13 @@ func update_display():
 		iconSprite.scale /= 16
 		iconSprite.position += Vector2(20, -65)
 		tempStore.add_child(iconSprite)
+		
+		var font = preload("res://fonts/tiny.ttf")
+		var label = Label.new()
+		label.text = str(collection[i].points)
+		label.add_theme_font_override("pixel", font)
+		label.position += Vector2(-40, -75)
+		tempStore.add_child(label)
 
 		hand.add_child(tempStore)
 		displayed_hand.append(tempStore)
