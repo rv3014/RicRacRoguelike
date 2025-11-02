@@ -24,7 +24,7 @@ func create_board():
 	var tile_size = 64 * 5 / 3
 	boardState = [[0,0,0],[0,0,0],[0,0,0]]
 	cardState = [[0,0,0],[0,0,0],[0,0,0]]
-	hand.connect("selectedCard", unlock)
+	#hand.connect("selectedCard", unlock)
 
 	for y in range(board_size):
 		for x in range(board_size):
@@ -52,16 +52,16 @@ func updateBoardState(coordinates: Vector2):
 	elif(cardSelected != null):
 		gameResult = true
 	if(cardSelected  != null):
-		for tile in tileList:
-			tile.lockTiles = false
-			tile.cardName = cardSelected.name
+		tileList[coordinates.y*board_size+coordinates.x].cardName = cardSelected.name
+		tileList[coordinates.y*board_size+coordinates.x].mark_tile()
 	if(cardSelected != null and !gameResult):
 		if(boardState[coordinates.x][coordinates.y] == 0):
 			boardState[coordinates.x][coordinates.y] = 1
 			print("made move")
 			moveMade.emit(boardState)
+			
 			robotMove()
-	else:
+	if (gameResult):
 		for tile in tileList:
 			tile.lockTiles = true
 	cardSelected = null
@@ -82,9 +82,6 @@ func robotMove():
 			tileList[y_coord*board_size+x_coord].robo_tile()
 			tileList[y_coord*board_size+x_coord].lockTiles = true
 			moveMade.emit(boardState)
-	#if(gameResult):
-		#for tile in tileList:
-			#tile.lockTiles = true
 
 func unlock(card):
 	for tile in tileList:
