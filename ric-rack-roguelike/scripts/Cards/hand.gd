@@ -49,6 +49,7 @@ func display_hand():
 		#tempStore.cardIndex = i
 		var iconSprite = Sprite2D.new()
 		var label = Label.new()
+		var desclabel = Label.new()
 		var font = preload("res://fonts/tiny.ttf")
 		iconSprite.texture = ImageTexture.create_from_image(Image.load_from_file(iconPath + collection[i].name + ".svg"))
 		iconSprite.scale = iconSprite.scale/16
@@ -56,8 +57,12 @@ func display_hand():
 		label.text = str(collection[i].points)
 		label.add_theme_font_override("pixel", font)
 		label.position += Vector2(-40, -75)
+		desclabel.text = str(collection[i].desc)
+		desclabel.add_theme_font_override("pixel", font)
+		desclabel.position += Vector2(-45, -45)
 		tempStore.add_child(iconSprite)
 		tempStore.add_child(label)
+		tempStore.add_child(desclabel)
 		hand.add_child(tempStore)
 		displayed_hand.append(tempStore)
 	return
@@ -101,6 +106,12 @@ func update_display():
 		label.add_theme_font_override("pixel", font)
 		label.position += Vector2(-40, -75)
 		tempStore.add_child(label)
+		
+		var desclabel = Label.new()
+		desclabel.text = str(collection[i].desc)
+		desclabel.add_theme_font_override("pixel", font)
+		desclabel.position += Vector2(-45, -45)
+		tempStore.add_child(desclabel)
 
 		hand.add_child(tempStore)
 		displayed_hand.append(tempStore)
