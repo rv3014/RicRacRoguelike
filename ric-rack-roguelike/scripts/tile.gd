@@ -23,9 +23,11 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 			_on_tile_clicked.emit(coords)
 			if(cardName!="" and !lockTiles):
 				mark_tile()
+				lockTiles = true
 		
 
 func mark_tile():
+	print("render")
 	var newTexture = ImageTexture.create_from_image(Image.load_from_file(iconPath + cardName + ".svg"))
 	tile_sprite.texture = newTexture
 	tile_sprite.scale = Vector2(.15, .15)

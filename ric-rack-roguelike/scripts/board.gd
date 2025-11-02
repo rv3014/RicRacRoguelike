@@ -55,9 +55,10 @@ func updateBoardState(coordinates: Vector2):
 		for tile in tileList:
 			tile.lockTiles = false
 			tile.cardName = cardSelected.name
-	if(!gameResult and cardSelected != null):
+	if(cardSelected != null and !gameResult):
 		if(boardState[coordinates.x][coordinates.y] == 0):
 			boardState[coordinates.x][coordinates.y] = 1
+			print("made move")
 			moveMade.emit(boardState)
 			robotMove()
 	else:
@@ -81,9 +82,9 @@ func robotMove():
 			tileList[y_coord*board_size+x_coord].robo_tile()
 			tileList[y_coord*board_size+x_coord].lockTiles = true
 			moveMade.emit(boardState)
-	if(gameResult):
-		for tile in tileList:
-			tile.lockTiles = true
+	#if(gameResult):
+		#for tile in tileList:
+			#tile.lockTiles = true
 
 func unlock(card):
 	for tile in tileList:
