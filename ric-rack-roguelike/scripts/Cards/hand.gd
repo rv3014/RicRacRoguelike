@@ -8,6 +8,7 @@ extends Node2D
 @export var CARD_HEIGHT:int = 60
 var collection : Array[Card] = []
 const cardScene = preload("res://scenes/card.tscn")
+const shaderScene = preload("res://scenes/pixelate.tscn")
 const scriptPath = "res://scripts/Cards/"
 const iconPath = "res://assets/icons/"
 @onready var hand:= $"."
@@ -44,10 +45,11 @@ func display_hand():
 	for i in range(hand_size):
 		var tempStore = cardScene.instantiate()
 		tempStore.set_script(scriptPath + collection[i].name +".gd")
-		tempStore.position += Vector2((i - 2) * 100, 0)
+		tempStore.position += Vector2((i - 2) * 100 * 1.778 - 93, 1)
 		var iconSprite = Sprite2D.new()
 		iconSprite.texture = ImageTexture.create_from_image(Image.load_from_file(iconPath + collection[i].name + ".svg"))
-		iconSprite.scale = iconSprite.scale/8
+		iconSprite.scale = iconSprite.scale/16
+		iconSprite.position += Vector2(20, -65)
 		tempStore.add_child(iconSprite)
 		hand.add_child(tempStore)
 	return

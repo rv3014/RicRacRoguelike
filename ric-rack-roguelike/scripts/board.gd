@@ -23,7 +23,8 @@ func center_board():
 	print(viewport_size)
 	var board_pxl_size = Vector2(board_size, board_size)
 	
-	board.position = viewport_size/2 - board_pxl_size/2
+	board.position.x = (viewport_size/2).x - (board_pxl_size/2).x
+	board.position.y += (4*viewport_size/10).y - (board_pxl_size/2).y
 
 func print_index(index):
 	print(index)

@@ -1,25 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://by6stc2nep3ud"]
+[gd_scene load_steps=3 format=3 uid="uid://by6stc2nep3ud"]
 
-[ext_resource type="PackedScene" uid="uid://cbgxx4u3tol0s" path="res://scenes/pixelate.tscn" id="1_57ec7"]
-[ext_resource type="Texture2D" uid="uid://8ont0fm6c4ov" path="res://assets/icons/Kunai.svg" id="2_4qd86"]
 [ext_resource type="PackedScene" uid="uid://bl583mgsmxep1" path="res://scenes/hand.tscn" id="2_5nfmu"]
 [ext_resource type="PackedScene" uid="uid://cnox550sc2b48" path="res://scenes/board.tscn" id="2_hx1lv"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_cbeu7"]
-
 [node name="GameMain" type="Node"]
 
-[node name="Icon2" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_cbeu7")
-position = Vector2(486, 514)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_4qd86")
-
-[node name="Pixelate" parent="." instance=ExtResource("1_57ec7")]
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Hand" parent="." instance=ExtResource("2_5nfmu")]
 
 [node name="Board" parent="." instance=ExtResource("2_hx1lv")]
-
-[node name="Hand" parent="." instance=ExtResource("2_5nfmu")]

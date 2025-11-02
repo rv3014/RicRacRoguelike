@@ -1,14 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://bl583mgsmxep1"]
 
 [ext_resource type="Script" uid="uid://cnfm5qr1sry32" path="res://scripts/Cards/hand.gd" id="1_eyfoh"]
-
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4mug4"]
-size = Vector2(300, 60)
+[ext_resource type="Texture2D" uid="uid://cbsmn5lh0j2ig" path="res://assets/hotbar.png" id="2_cmdsa"]
 
 [node name="Hand" type="Node2D"]
 script = ExtResource("1_eyfoh")
 
 [node name="Hand-Sprite" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(-7.1054274e-15, -7.1054274e-15)
-texture = SubResource("PlaceholderTexture2D_4mug4")
+scale = Vector2(3, 3)
+texture = ExtResource("2_cmdsa")
