@@ -12,7 +12,7 @@ signal _robot_move
 #preloading
 const iconPath = "res://assets/icons/"
 const X_texture = preload("res://assets/TilePlaceholderX.png") 
-const O_texture = preload("res://assets/TilePlaceholderO.png")
+const O_texture = preload("res://assets/O-Marking.png")
 #func _on_mouse_entered() -> void:
 	#_on_tile_clicked.emit(index)
 
@@ -33,4 +33,5 @@ func mark_tile():
 	tile_sprite.scale = Vector2(.15, .15)
 func robo_tile():
 	tile_sprite.texture = O_texture
+	tile_sprite.scale = Vector2(.3, .3)
 	_robot_move.emit()
