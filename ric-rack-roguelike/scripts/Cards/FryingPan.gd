@@ -1,10 +1,10 @@
-class_name Sword extends Card
+class_name FryingPan extends Card
 
 func _init(team):
-	name = "Sword"
+	name = "Frying Pan"
 	self.team = team
 	types = [Type.MELEE]
-	points = 3
+	points = 2
 	cost = 4
 
 func ability(boardState: Array[Card]):
@@ -12,8 +12,6 @@ func ability(boardState: Array[Card]):
 	output.resize(len(boardState))
 	output.fill([])
 	for i in range(len(boardState)):
-		if isMyEnemy(boardState[i]):
-			continue
-		if isAdjacent(boardState[i]):
-			output[i].append(Vector2(Card.Modifier.ADD, 2))
+		if isInCorner(boardState[0]):
+			output[i].append(Vector2(Card.Modifier.MULT, 1.8))
 	return output
