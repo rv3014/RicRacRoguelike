@@ -2,7 +2,7 @@
 
 enum Team {PLAYER, ENEMY}
 enum Type {MELEE, RANGED}
-
+enum Modifier {MULT, ADD}
 
 var x : int
 var y: int
@@ -11,6 +11,8 @@ var position: Vector2 = Vector2(x, y)
 var name : String
 var team : Team
 var types : Array[Type]
+var points: int
+var cost: int
 
 #func isValid(postion: Vector2):
 	#return (0 <= position.x and position.x <= 2) and (0 <= position.y and position.y <= 2)
@@ -36,7 +38,7 @@ func isAdjacent(otherCard: Card):
 func isInCorner(otherCard: Card):
 	return otherCard.x != 1 and otherCard.y != 1
 	
-func isInWinLine(otherCard: Card, isWin: bool):
+func isInWinLine(otherCard: Card):
 	return false
 	
 func isInMiddle(otherCard: Card):
@@ -65,9 +67,15 @@ func isPlayer(otherCard: Card):
 	
 func isEnemy(otherCard: Card):
 	return otherCard.team == Team.ENEMY
-	
+
+func isMyEnemy(otherCard: Card):
+	return otherCard.team != team
+
+func isMe(otherCard: Card):
+	return otherCard.position == position
 
 func ability(boardState):
-	#input = array of cards in board
-	#output = array of arrays of tuples(AMOUNT, OPERATION)
-	return
+	var output = []
+	output.resize(len(boardState))
+	output.fill([])
+	return output
