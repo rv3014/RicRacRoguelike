@@ -12,5 +12,8 @@ func ability(boardState: Array[Card]):
 	output.resize(len(boardState))
 	output.fill([])
 	for i in range(len(boardState)):
-		output[i].append(Vector2(Card.Modifier.ADD, 2))
+		if isMyEnemy(boardState[i]):
+			continue
+		if isMelee(boardState[i]):
+			output[i].append(Vector2(Card.Modifier.ADD, 2))
 	return output

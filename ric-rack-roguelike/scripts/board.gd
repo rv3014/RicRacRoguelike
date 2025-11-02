@@ -15,11 +15,11 @@ var totalMoves: int = 0
 var cardSelected: Card = null
 signal moveMade
 
-
 func _ready():
 	create_board()
 	center_board()
-	
+
+
 func create_board():
 	var tile_size = 64 * 5 / 3
 	boardState = [[0,0,0],[0,0,0],[0,0,0]]
@@ -93,4 +93,3 @@ func result_handler():
 
 func print_index(index):
 	print(index)
-	

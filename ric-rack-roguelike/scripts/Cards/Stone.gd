@@ -1,13 +1,8 @@
 class_name Stone extends Card
 
-
 func _init(team):
 	name = "Stone"
-	types = [Type.RANGED]
-	
 	self.team = team
+	types = [Type.RANGED]
 	points = 1
 	cost = 1
-
-func ability(boardState: Array[Card]):
-	return

@@ -12,6 +12,8 @@ func ability(boardState: Array[Card]):
 	output.resize(len(boardState))
 	output.fill([])
 	for i in range(len(boardState)):
+		if isMyEnemy(boardState[i]):
+			continue
 		if isInColumn(boardState[0], x) and isRanged(boardState[0]):
 			output[i].append(Vector2(Card.Modifier.MULT, 2))
 		if isInRow(boardState[0], y) and isMelee(boardState[0]):
