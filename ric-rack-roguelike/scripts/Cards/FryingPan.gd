@@ -1,7 +1,7 @@
 class_name FryingPan extends Card
 
 func _init(team):
-	name = "Frying Pan"
+	name = "FryingPan"
 	self.team = team
 	types = [Type.MELEE]
 	points = 2
