@@ -1,41 +1,39 @@
 extends Node
 
-const win_cons = [
-	[
-		
-	[1, 1, 1],
-	[0, 0, 0],
-	[0, 0, 0]],
+@onready var board:= $Board
+
+var gameWon: bool = false
+var totalMoves: int = 0
+
+func _ready():
+	board.connect("moveMade", check_win)
 	
-	[
-	[0, 0, 0],
-	[1, 1, 1],
-	[0, 0, 0]],
-	
-	[[0, 0, 0],
-	[0, 0, 0],
-	[1, 1, 1]],
-	
-	[[1, 0, 0],
-	[1, 0, 0],
-	[1, 0, 0]],
-	
-	[[0, 1, 0],
-	[0, 1, 0],
-	[0, 1, 0]],
-	
-	[[0, 0, 1],
-	[0, 0, 1],
-	[0, 0, 1]],
-	
-	[[0, 0, 1],
-	[0, 1, 0],
-	[1, 0, 0]],
-	
-	[[1, 0, 0],
-	[0, 1, 0],
-	[0, 0, 1]]
-	]
-func check_win(player, boardState):
-	
-	return
+func check_win(boardState):
+	totalMoves+=1
+	print(totalMoves)
+	if(totalMoves < 10):
+		var row_sum
+		var col_sum
+		var diagonal1_sum
+		var diagonal2_sum
+		for i in range(len(boardState)):
+			row_sum = boardState[i][0] + boardState[i][1] + boardState[i][2]
+			col_sum = boardState[0][i] + boardState[1][i] + boardState[2][i]
+			diagonal1_sum = boardState[0][0] + boardState[1][1] + boardState[2][2]
+			diagonal2_sum = boardState[0][2] + boardState[1][1] + boardState[2][0]
+			
+			if(row_sum == 3 or col_sum == 3 or diagonal1_sum == 3 or diagonal2_sum == 3):
+				print("Player Wins")
+				gameWon = true
+				board.gameResult = true
+			if(row_sum == -3 or col_sum == -3 or diagonal1_sum == -3 or diagonal2_sum == -3):
+				print("Enemy Wins")
+				gameWon = false
+				board.gameResult = true
+
+
+	else:
+		print("Tie")
+		gameWon = true
+		board.gameResult = true
+		return gameWon

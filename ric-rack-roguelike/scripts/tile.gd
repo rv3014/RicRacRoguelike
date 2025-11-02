@@ -4,20 +4,24 @@ extends Area2D
 @onready var tile:= $"."
 var index:int = -1
 var coords:Vector2 = Vector2(-1,-1)
+var lockTiles:bool = false
 signal _on_tile_clicked
-
+signal _robot_move
 #preloading
 const X_texture = preload("res://assets/TilePlaceholderX.png") 
-
+const O_texture = preload("res://assets/TilePlaceholderO.png")
 #func _on_mouse_entered() -> void:
 	#_on_tile_clicked.emit(index)
 
 
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton):
-		if event.pressed:
+		if event.pressed and !lockTiles:
 			mark_tile()
-			_on_tile_clicked.emit(index)
+			_on_tile_clicked.emit(coords)
 
 func mark_tile():
 	tile_sprite.texture = X_texture
+func robo_tile():
+	tile_sprite.texture = O_texture
+	_robot_move.emit()
