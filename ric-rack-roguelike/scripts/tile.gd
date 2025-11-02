@@ -20,11 +20,10 @@ const O_texture = preload("res://assets/TilePlaceholderO.png")
 func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if(event is InputEventMouseButton):
 		if event.pressed and !lockTiles:
-			print("mark")
-			if(cardName!=""):
+			_on_tile_clicked.emit(coords)
+			if(cardName!="" and !lockTiles):
 				mark_tile()
-			print("emit")
-		_on_tile_clicked.emit(coords)
+		
 
 func mark_tile():
 	var newTexture = ImageTexture.create_from_image(Image.load_from_file(iconPath + cardName + ".svg"))
