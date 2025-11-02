@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var hand_size:int = 5
-@export var starting_hand = [Stone.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER)]
+@export var starting_hand = [Stick.new(Card.Team.PLAYER), Stick.new(Card.Team.PLAYER), Stick.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER)]
 
 @export var CARD_WIDTH:int = 60
 @export var CARD_HEIGHT:int = 60
@@ -13,15 +13,14 @@ func _ready():
 	create_hand(deck)
 	center_hand()
 	
-	print(len(collection))
-	for i in collection:
-		print(i.name)
+	#print(len(collection))
+	#for i in collection:
+		#print(i.name)
 	
 	
 
 func init_Deck():
 	var deck = Deck.new()
-	starting_hand = [Stick.new(Card.Team.PLAYER), Stick.new(Card.Team.PLAYER), Stick.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER), Stone.new(Card.Team.PLAYER)]
 	deck.cards.append_array(starting_hand)
 	return deck
 	

@@ -1,13 +1,7 @@
 class_name Stick extends Card
 
 func _init(team):
-<<<<<<<< Updated upstream:ric-rack-roguelike/scripts/Cards/Sword.gd
-	name = "Sword"
-========
 	name = "Stick"
-	types = [Type.MELEE]
-	
->>>>>>>> Stashed changes:ric-rack-roguelike/scripts/Cards/Stick.gd
 	self.team = team
 	types = [Type.MELEE]
 	points = 3
